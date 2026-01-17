@@ -1,0 +1,59 @@
+{
+    "60-70": [
+        {
+            "vehicle_id": "1258",
+            "vehicle_type": "Car",
+            "model": "Audi",
+            "battery_level": 65,
+            "status": "On Trip"
+        }
+    ],
+    "71-89": [
+        {
+            "vehicle_id": "1596",
+            "vehicle_type": "Scooter",
+            "model": "Activa",
+            "battery_level": 89,
+            "status": "On Trip"
+        },
+        {
+            "vehicle_id": "1234",
+            "vehicle_type": "Car",
+            "model": "5689",
+            "battery_level": 86,
+            "status": "On Trip"
+        },
+        {
+            "vehicle_id": "1234",
+            "vehicle_type": "Car",
+            "model": "Honda",
+            "battery_level": 85,
+            "status": "Avaliable"
+        },
+        {
+            "vehicle_id": "S1",
+            "vehicle_type": "Scooter",
+            "model": "Ola",
+            "battery_level": 85,
+            "status": "On Trip"
+        }
+    ],
+    "90-100": [
+        {
+            "vehicle_id": "C!",
+            "vehicle_type": "Car",
+            "model": "Tesla",
+            "battery_level": 90,
+            "status": "Avaliable"
+        }
+    ],
+    "Others": [
+        {
+            "vehicle_id": "C2",
+            "vehicle_type": "Car",
+            "model": "BMW",
+            "battery_level": 50,
+            "status": "Avaliable"
+        }
+    ]
+}
