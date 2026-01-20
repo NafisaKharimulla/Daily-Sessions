@@ -1,0 +1,12 @@
+VALID : This is a normal profile description
+INVALID : contact me at test@gmail.com
+INVALID : my number is 9876543210
+INVALID : visit http://example.com
+VALID : This is a normal profile description
+INVALID : contact me at test@gmail.com
+INVALID : my number is 9876543210
+INVALID : visit http://example.com
+VALID : This is a normal profile description
+INVALID : contact me at test@gmail.com
+INVALID : my number is 9876543210
+INVALID : visit http://example.com

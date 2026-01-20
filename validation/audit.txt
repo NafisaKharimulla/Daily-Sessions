@@ -1,0 +1,11 @@
+VALID : hii welcome to Bridgelabz.
+INVALID : hi safeena@gmail.com
+INVALID : hii, nafisa@gmail.com
+VALID : https:// 12e3
+VALID : https:// husjnwi
+VALID : https://12
+VALID : https://12e4r
+VALID : https://12e4r
+INVALID : https://45
+INVALID : https://4
+VALID : https://abc12w
