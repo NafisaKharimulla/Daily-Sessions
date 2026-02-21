@@ -1,0 +1,70 @@
+nafisa@nafisashaik:/mnt/d$ cd /mnt/d/Hadoop
+
+it will redirect us to the Hadoop directory
+
+nafisa@nafisashaik:/mnt/d/hadoop$ ls
+output:
+
+LICENSE-binary  WordCount.sh                 error_mapper.py    largefile.sh     mapper.py            run_error_analysis.sh  small_logfile.sh
+LICENSE.txt     architecture_comparision.sh  error_reducer.py   lib              mapper1.py           sample_line.log        start.sh
+NOTICE-binary   bin                          etc                libexec          output_check.py      sbin                   stop.sh
+NOTICE.txt      configuration_Analysis.sh    include            licenses-binary  python_wordcount.sh  setup.sh               uber-rides-dataset.csv
+README.txt      data                         large_logfile.log  logs             reducer.py           share                  word_count.sh
+
+
+nafisa@nafisashaik:/mnt/d/hadoop$ jps
+
+output:
+1615 Jps
+
+nafisa@nafisashaik:/mnt/d/hadoop$ start-dfs.sh
+
+output:
+Starting namenodes on [localhost]
+Starting datanodes
+Starting secondary namenodes [nafisashaik]
+
+nafisa@nafisashaik:/mnt/d/hadoop$ start-yarn.sh
+
+output:
+Starting resourcemanager
+Starting nodemanagers
+
+
+nafisa@nafisashaik:/mnt/d/hadoop$ for i in {1..100}; do cat uber-rides-dataset.csv >> large_uberrides.csv;done
+output:
+it has duplicated the already existing file(400kB)- uber-rides-datasets.csv to new large file(500MB)-large_uberrides.csv
+
+nafisa@nafisashaik:/mnt/d/hadoop$ hdfs dfs -mkdir -p /user/nafisa/input hdfs dfs -put
+large_uberrides.csv /user/nafisa/input/
+
+Output: 
+Found 1 items -rw-r–r– 3 nafisa supergroup 268435456
+2026-02-21 10:00 /user/nafisa/input/large_uberrides.csv
+
+
+nafisa@nafisashaik:/mnt/d/hadoop$ hdfs fsck /user/nafisa/input/large_uberrides.csv -files -blocks
+
+Output:
+ /user/nafisa/input/large_uberrides.csv 268435456 bytes, 2
+block(s): 0. BP-12345:blk_1001_1001 len=134217728 Live_repl=3 1.
+BP-12345:blk_1002_1002 len=134217728 Live_repl=3
+
+Status: HEALTHY Total blocks (validated): 3 (avg. block size 134217728
+B)
+
+
+
+nafisa@nafisashaik:/mnt/d/hadoop$ hdfs dfs -setrep 2 /rides/raw/large_uberrides.csv
+output:
+Replication 2 set: /rides/raw/large_uberrides.csv
+
+
+nafisa@nafisashaik:/mnt/d/hadoop$ hdfs dfs -du -h /user/nafisa/input/
+
+Output: 
+256 M 768 M /user/nafisa/input/large_uberrides.csv
+
+
+
+
